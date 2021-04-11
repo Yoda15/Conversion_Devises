@@ -1,0 +1,220 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Convertisseur de monnaie</title>
+		<link rel="stylesheet" type="text/css" href="Style.css">
+		<script src="Code.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<h1 class="titre">Convertisseur de monnaie</h1>
+		<h2>Merci de renter la somme et la devises:</h2>
+		<input type="number" id="money" value="" min="0">
+		<select id="devisesdepart">
+			<option value="usd">Dollar Americain(USD)</option>
+			<option value="eur">Euros(EUR)</option>
+			<option value="jpy">Yen Japonais(JPY)</option>
+			<option value="gbp">Livre Sterling(GBP)</option>
+			<option value="aud">Dollar Australien(AUD)</option>
+			<option value="cad">Dollar Canadien(CAD)</option>
+			<option value="chf">Franc Suisse(CHF)</option>
+			<option value="cnh">Renminbi Chinois(CNH)</option>
+			<option value="sek">Couronne Suédoise(SEK)</option>
+			<option value="nzd">Dollar Néo-zélandais(NZD)</option>
+		</select>
+		<p3>en</p3>
+		<select id="devisesarrive">
+			<option value="usd">Dollar Americain(USD)</option>
+			<option value="eur">Euros(EUR)</option>
+			<option value="jpy">Yen Japonais(JPY)</option>
+			<option value="gbp">Livre Sterling(GBP)</option>
+			<option value="aud">Dollar Australien(AUD)</option>
+			<option value="cad">Dollar Canadien(CAD)</option>
+			<option value="chf">Franc Suisse(CHF)</option>
+			<option value="cnh">Renminbi Chinois(CNH)</option>
+			<option value="sek">Couronne Suédoise(SEK)</option>
+			<option value="nzd">Dollar Néo-zélandais(NZD)</option>
+		</select>
+		<input type="submit" onClick="validation();">
+
+
+
+
+		<table class="table tc" id="txc">
+									<colgroup>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+										<col width="5%"/>
+									</colgroup>
+									<thead>
+										<tr>
+											<th></th>
+											<th></th>
+											<th class="tc">EUR</th>
+											<th class="tc">USD</th>
+											<th class="tc">CNH</th>
+											<th class="tc">GBP</th>
+											<th class="tc">JPY</th>
+											<th class="tc">CHF</th>
+											<th class="tc">AUD</th>
+											<th class="tc">CAD</th>
+											<th class="tc">SEK</th>
+											<th class="tc">NZD</th>
+										</tr>
+									</thead>
+									<tbody>
+
+											<tr>
+												<td class="tl"><b>Europe</b></td>
+												<td class="tl">Devises EUREUR</td>
+												<td id="eur_eur" align="center">1</td>
+												<td id="eur_usd" align="center">1.1025</td>
+												<td id="eur_cnh" align="center">7.6949</td>
+												<td id="eur_gbp" align="center">0.8449</td>
+												<td id="eur_jpy" align="center">120.9350</td>
+												<td id="eur_chf" align="center">1.0721</td>
+												<td id="eur_aud" align="center">1.62</td>
+												<td id="eur_cad" align="center">1.45</td>
+												<td id="eur_sek" align="center">10.50</td>
+												<td id="eur_nzd" align="center">1.68</td>
+											</tr>
+											<tr>
+												<td class="tl"><b>Etats-Unis</b></td>
+												<td class="tl">Devises USDUSD</td>
+												<td id="usd_eur" align="center">0.9070</td>
+												<td id="usd_usd" align="center">1</td>
+												<td id="usd_cnh" align="center">6.9779</td>
+												<td id="usd_gbp" align="center">0.7663</td>
+												<td id="usd_jpy" align="center">109.6700</td>
+												<td id="usd_chf" align="center">0.9723</td>
+												<td id="usd_aud" align="center">1.48</td>
+												<td id="usd_cad" align="center">1.33</td>
+												<td id="usd_sek" align="center">9.62</td>
+												<td id="usd_nzd" align="center">1.54</td>
+											</tr>
+											<tr>
+												<td class="tl"><b>Chine</b></td>
+												<td class="tl">Devises CNHCNH</td>
+												<td id="cnh_eur" align="center">0.1299</td>
+												<td id="cnh_usd" align="center">0.1433</td>
+												<td id="cnh_cnh" align="center">1</td>
+												<td id="cnh_gbp" align="center">0.1097</td>
+												<td id="cnh_jpy" align="center">15.7162</td>
+												<td id="cnh_chf" align="center">0.1393</td>
+												<td id="cnh_aud" align="center">0.21</td>
+												<td id="cnh_cad" align="center">0.19</td>
+												<td id="cnh_sek" align="center">1.38</td>
+												<td id="cnh_nzd" align="center">0.22</td>
+											</tr>
+											<tr>
+												<td class="tl"><b>Grande Bretagne</b></td>
+												<td class="tl">Devises GBPGBP</td>
+												<td id="gbp_eur" align="center">1.1835</td>
+												<td id="gbp_usd" align="center">1.3049</td>
+												<td id="gbp_cnh" align="center">9.1157</td>
+												<td id="gbp_gbp" align="center">1</td>
+												<td id="gbp_jpy" align="center">143.1352</td>
+												<td id="gbp_chf" align="center">1.2690</td>
+												<td id="gbp_aud" align="center">1.92</td>
+												<td id="gbp_cad" align="center">1.72</td>
+												<td id="gbp_sek" align="center">12.49</td>
+												<td id="gbp_nzd" align="center">2.00</td>
+											</tr>
+											<tr>
+												<td class="tl"><b>Japon</b></td>
+												<td class="tl">Devises JPYJPY</td>
+												<td id="jpy_eur" align="center">0.0082</td>
+												<td id="jpy_usd" align="center">0.0091</td>
+												<td id="jpy_cnh" align="center">0.0636</td>
+												<td id="jpy_gbp" align="center">0.0069</td>
+												<td id="jpy_jpy" align="center">1</td>
+												<td id="jpy_chf" align="center">0.8865</td>
+												<td id="jpy_aud" align="center">0.013</td>
+												<td id="jpy_cad" align="center">0.012</td>
+												<td id="jpy_sek" align="center">0.088</td>
+												<td id="jpy_nzd" align="center">0.014</td>
+											</tr>
+											<tr>
+												<td class="tl"><b>Suisse</b></td>
+												<td class="tl">Devises CHFCHF</td>
+												<td id="chf_eur" align="center">0.9327</td>
+												<td id="chf_usd" align="center">1.0284</td>
+												<td id="chf_cnh" align="center">7.1787</td>
+												<td id="chf_gbp" align="center">0.7880</td>
+												<td id="chf_jpy" align="center">1.1280</td>
+												<td id="chf_chf" align="center">1</td>
+												<td id="chf_aud" align="center">1.52</td>
+												<td id="chf_cad" align="center">1.36</td>
+												<td id="chf_sek" align="center">9.87</td>
+												<td id="chf_nzd" align="center">1.58</td>
+											</tr>
+											<tr>
+												<td class="tl"><b>Australie</b></td>
+												<td class="tl">Devises AUDAUD</td>
+												<td id="aud_eur" align="center">0.62</td>
+												<td id="aud_usd" align="center">0.67</td>
+												<td id="aud_cnh" align="center">4.70</td>
+												<td id="aud_gbp" align="center">0.52</td>
+												<td id="aud_jpy" align="center">74.18</td>
+												<td id="aud_chf" align="center">0.66</td>
+												<td id="aud_aud" align="center">1</td>
+												<td id="aud_cad" align="center">0.90</td>
+												<td id="aud_sek" align="center">6.49</td>
+												<td id="aud_nzd" align="center">1.04</td>
+											</tr>
+											<tr>
+												<td class="tl"><b>Canada</b></td>
+												<td class="tl">Devises CADCAD</td>
+												<td id="cad_eur" align="center">0.69</td>
+												<td id="cad_usd" align="center">0.75</td>
+												<td id="cad_cnh" align="center">5.25</td>
+												<td id="cad_gbp" align="center">0.58</td>
+												<td id="cad_jpy" align="center">82.85</td>
+												<td id="cad_chf" align="center">0.73</td>
+												<td id="cad_aud" align="center">1.12</td>
+												<td id="cad_cad" align="center">1</td>
+												<td id="cad_sek" align="center">7.25</td>
+												<td id="cad_nzd" align="center">1.16</td>
+											</tr>
+											<tr>
+												<td class="tl"><b>Suède</b></td>
+												<td class="tl">Devises SEKSEK</td>
+												<td id="sek_eur" align="center">0.095</td>
+												<td id="sek_usd" align="center">0.10</td>
+												<td id="sek_cnh" align="center">0.72</td>
+												<td id="sek_gbp" align="center">0.080</td>
+												<td id="sek_jpy" align="center">11.44</td>
+												<td id="sek_chf" align="center">0.10</td>
+												<td id="sek_aud" align="center">0.15</td>
+												<td id="sek_cad" align="center">0.14</td>
+												<td id="sek_sek" align="center">1</td>
+												<td id="sek_nzd" align="center">0.16</td>
+											</tr>
+											<tr>
+												<td class="tl"><b>Nouvelle-Zélande</b></td>
+												<td class="tl">Devises NZDNZD</td>
+												<td id="nzd_eur" align="center">0.59</td>
+												<td id="nzd_usd" align="center">0.65</td>
+												<td id="nzd_cnh" align="center">4.52</td>
+												<td id="nzd_gbp" align="center">0.50</td>
+												<td id="nzd_jpy" align="center">71.30</td>
+												<td id="nzd_chf" align="center">0.63</td>
+												<td id="nzd_aud" align="center">0.96</td>
+												<td id="nzd_cad" align="center">0.86</td>
+												<td id="nzd_sek" align="center">6.24</td>
+												<td id="nzd_nzd" align="center">1</td>
+											</tr>
+								</tbody>
+							</table>
+			</body>
+</html>
